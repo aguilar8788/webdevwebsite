@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import Navigation from './common/Navigation'
 
 class App extends Component {
     render() {

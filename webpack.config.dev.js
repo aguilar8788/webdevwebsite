@@ -31,7 +31,7 @@ export default {
     ],
     module: {
         loaders: [
-            {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel-loader']},
+            {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
             {test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
             {test: /\.css$/, loader: 'style-loader!css-loader'},
             {
