@@ -1,0 +1,21 @@
+.navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative; }
+  .navigation ul li {
+    padding: 5px;
+    list-style: none; }
+.navigation .socialMedia {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 30px;
+  position: absolute; }
+  .navigation .socialMedia li {
+    margin-bottom: -15px; }
+
+/*# sourceMappingURL=style.css.map */
