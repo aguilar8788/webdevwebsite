@@ -24,13 +24,13 @@ class NavBar extends Component {
 		if(this.state.showSocial == true) {
 		return(
 			<span>
-       <Glyphicon glyph="glyphicon glyphicon-chevron-down"/>
+       <Glyphicon glyph="glyphicon glyphicon-menu-down"/>
     </span>	
 		)	
 		} else {
 			return(
 			<span>
-       <Glyphicon glyph="glyphicon glyphicon-chevron-up"/>
+       <Glyphicon glyph="glyphicon glyphicon-menu-up"/>
     </span>	
 		)
 		}
