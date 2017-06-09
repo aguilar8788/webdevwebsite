@@ -17,7 +17,6 @@ class NavBar extends Component {
 
 	showSocialDropDown() {
 		let showSocialBool = this.state.showSocial
-		//this.state.showSocial ? this.setState({showSocial: false}) : this.setState({showSocial: true})
 		this.setState({showSocial: showSocialBool ? false : true})
 	}
 
@@ -25,13 +24,13 @@ class NavBar extends Component {
 		if(this.state.showSocial == true) {
 		return(
 			<span>
-       <Glyphicon glyph="glyphicon glyphicon-chevron-up"/>
+       <Glyphicon glyph="glyphicon glyphicon-chevron-down"/>
     </span>	
 		)	
 		} else {
 			return(
 			<span>
-       <Glyphicon glyph="glyphicon glyphicon-chevron-down"/>
+       <Glyphicon glyph="glyphicon glyphicon-chevron-up"/>
     </span>	
 		)
 		}
@@ -41,15 +40,16 @@ class NavBar extends Component {
 	render () {
 		return (
 			<nav className="navigation">
+				<img className="logo" src={require("../../../../images/AguilarWebDevLogo.png")} />
 				<ul>	
 					<li><IndexLink to="/" activeClassName="active">about</IndexLink></li>
 					<li><IndexLink to="/work" activeClassName="active">work</IndexLink></li>
 					<li><IndexLink to="/blog" activeClassName="active">blog</IndexLink></li>
 					<li><IndexLink to="/contact" activeClassName="active">contact</IndexLink></li>
-					<li className="socialDropDown" onClick={this.showSocialDropDown}>social {this.renderDropDownGlyph()}</li>
+					<li className="socialDropDown" onClick={this.showSocialDropDown}><a href="#">social {this.renderDropDownGlyph()}</a></li>
 					<ul className="socialMedia" onMouseLeave={this.showSocialDropDown} style={this.state.showSocial  == false ? {display: 'none'} : {display: 'flex'}}>
-						<li><a href="#">facebook</a></li>
-						<li><a href="#">twitter</a></li>
+						<li><a className="socialBrands" href="#">facebook</a></li>
+						<li><a className="socialBrands" href="#">twitter</a></li>
 					</ul>
 				</ul>	
 			</nav>

@@ -9,9 +9,10 @@ class About extends Component {
 	render() {
 		return (
 			<div>
-				<NavBar />
 				<div className="aboutContainer container-fluid">
-					<h1>about page</h1>
+					<h1>We are Detroit based developers </h1>
+					<h1>that are passionate about making </h1>
+					<h1>your web dreams a reality</h1>
 				</div>
 			</div>
 		)	
