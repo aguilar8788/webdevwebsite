@@ -1,4 +1,5 @@
-import React, {PropTypes, Component} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class Work extends Component {
 	constructor(props, context) {
@@ -21,7 +22,7 @@ Work.propTypes = {
 }
 
 Work.contextTypes = {
-	routes: React.PropTypes.object
+	routes: PropTypes.object
 }
 
 export default Work

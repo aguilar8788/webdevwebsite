@@ -1,4 +1,5 @@
-import React, {Proptypes, Component} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import ContactForm from '../../common/form/component/Form.js'
 class Contact extends Component {
 	constructor(props, context) {
@@ -22,7 +23,7 @@ Contact.propTypes = {
 }
 
 Contact.contextTypes = {
-	router: React.PropTypes.object
+	router: PropTypes.object
 }
 
 export default Contact

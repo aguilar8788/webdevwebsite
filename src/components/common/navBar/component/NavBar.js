@@ -1,4 +1,5 @@
-import React, {Proptypes, Component} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import { Link, IndexLink } from 'react-router'
 import {connect} from 'react-redux'
 import Glyphicon from 'react-bootstrap/lib/Glyphicon'
@@ -62,7 +63,7 @@ NavBar.propTypes = {
 }
 
 NavBar.contextTypes = {
-	router: React.PropTypes.object
+	router: PropTypes.object
 }
 
 function mapStateToProps(state, ownProps) {

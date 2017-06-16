@@ -1,0 +1,52 @@
+.contactForm {
+
+	button {
+		line-height: 32px;
+		padding: 2px;
+		border: none;
+		font-size: 18px;
+		background-color: rgba(0, 0, 0, .8);
+		color: hsl(207,59%,59%);
+		font-size: 40px;
+		margin-top: 15px;
+	}
+	
+	input, select, textarea {
+		text-align: center;
+		background-color: rgba(0, 0, 0, .8);
+		height: 50px;
+		width: 300px;
+		font-size: 18px;
+		color: hsl(207,59%,59%);
+		margin-bottom: -20px;
+	}
+	
+	input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: hsl(207,59%,59%);
+	}
+	
+	input:focus {
+		text-align: left;	
+		background-color: rgba(0, 0, 0, .8);
+		font-size: 30px;
+		color: hsl(207,59%,59%);
+	}
+	
+	input:focus::-webkit-input-placeholder {
+		opacity: 0;
+	}
+
+	.visited {
+		text-align: left;	
+		background-color: rgba(0, 0, 0, .8);
+		font-size: 30px;
+		color: hsl(207,59%,59%);
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center; 
+		align-items: center;
+	}
+}

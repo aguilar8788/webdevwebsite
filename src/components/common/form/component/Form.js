@@ -1,8 +1,32 @@
-import React, {PropTypes, Component} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import TextInput from '../../TextInput.js'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import * as formActions from '../actions/formActions.js'
+
 class ContactForm extends Component {
 	constructor(props, context) {
-		super(props, context) 	
+		super(props, context) 
+		this.state = {
+			form: Object.assign({}, this.props.form)	
+		}
+		this.updateFormState = this.updateFormState.bind(this)
+		this.submitForm = this.submitForm.bind(this)
+	}
+
+	updateFormState(event) {
+		const field = event.target.name
+		let form = this.state.form
+
+		form[field] = event.target.value
+
+		return this.setState({form})
+	}
+
+	submitForm(event) {
+		event.preventDefault()
+		this.props.actions.submitForm(this.state.form)
 	}
 
 	render() {
@@ -11,36 +35,64 @@ class ContactForm extends Component {
 				<form>
 					<TextInput 
 						name="firstName"
-						label="first Name"
-						onChange={_=>_}
+						placeholder="first name"
+						onChange={this.updateFormState}
+						inputStatus={this.state.form.firstName ? this.state.form.firstName : "false"} 
 					/>
 					<TextInput
 						name="lastName"
-						label="last Name"
-						onChange={_=>_}
+						placeholder="last name"
+						onChange={this.updateFormState}
+						inputStatus={this.state.form.lastName ? this.state.form.lastName : "false"} 
+
 					/>
 					<TextInput
 						name="phoneNumber"
-						label="phone"
-						onChange={_=>_}
+						placeholder="phone"
+						onChange={this.updateFormState}
+						inputStatus={this.state.form.phoneNumber ? this.state.form.phoneNumber : "false"} 
+
 					/>
 					<TextInput
 						name="company"
-						label="company"
-						onChange={_=>_}
+						placeholder="company"
+						onChange={this.updateFormState}
+						inputStatus={this.state.form.company ? this.state.form.company : "false"} 
+
 					/>
+					<button type="submit" onClick={this.submitForm}>send</button>
 				</form>
 			</div>
 		)	
 	}
 }
 
-ContactForm.proptypes = {
-
+ContactForm.propTypes = {
+	form: PropTypes.array,
+	actions: PropTypes.object.isRequired
 }
 
 ContactForm.contextTypes = {
- router: React.PropTypes.object
+	router: PropTypes.object
 }
 
-export default ContactForm
+function mapStateToProps(state, ownProps) {
+	let form = [{
+		firstName: '',
+		lastName: '',
+		phone: '',
+		company: ''
+	}]
+
+	return {
+		form: form	
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators(formActions, dispatch)	
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm)

@@ -1,4 +1,5 @@
-import React, {PropTypes, Component} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import NavBar from '../../common/navBar/component/NavBar.js'
 
 class About extends Component {
@@ -23,7 +24,7 @@ About.propTypes = {
 }
 
 About.contextTypes = {
-	router: React.PropTypes.object
+	router: PropTypes.object
 }
 
 export default About

@@ -72,4 +72,42 @@
   width: 100vw;
   height: 100vh; }
 
+.contactForm button {
+  line-height: 32px;
+  padding: 2px;
+  border: none;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #599dd4;
+  font-size: 40px;
+  margin-top: 15px; }
+.contactForm input, .contactForm select, .contactForm textarea {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  width: 300px;
+  font-size: 18px;
+  color: #599dd4;
+  margin-bottom: -20px; }
+.contactForm input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #599dd4; }
+.contactForm input:focus {
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  color: #599dd4; }
+.contactForm input:focus::-webkit-input-placeholder {
+  opacity: 0; }
+.contactForm .visited {
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  color: #599dd4; }
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 /*# sourceMappingURL=style.css.map */
