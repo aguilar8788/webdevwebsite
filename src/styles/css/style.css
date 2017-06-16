@@ -85,7 +85,7 @@
   text-align: center;
   background-color: rgba(0, 0, 0, 0.8);
   height: 50px;
-  width: 300px;
+  width: 400px;
   font-size: 18px;
   color: #599dd4;
   margin-bottom: -20px; }
@@ -109,5 +109,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+
+.contactContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 90vh;
+  margin-right: auto; }
+  .contactContainer h1 {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #599dd4;
+    font-size: 40px;
+    display: inline-block;
+    padding: 2px; }
+  .contactContainer .leftContentContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 70px; }
+  .contactContainer .rightContentContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+  .contactContainer .contactForm {
+    margin-left: -50px;
+    margin-top: -375px;
+    align-self: center; }
 
 /*# sourceMappingURL=style.css.map */

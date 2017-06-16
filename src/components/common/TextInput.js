@@ -13,7 +13,7 @@ const TextInput = ({name, label, onChange, placeholder, value, error, inputStatu
 				<input
 					type="text"
 					name={name}
-					className={inputStatus == "false" ? "form-control textInput" : "form-control textInput visited" }
+					className={inputStatus == "false" ? "form-control textInput" : "form-control textInput visited"}
 					placeholder={placeholder}
 					value={value}
 					onChange={onChange}
