@@ -49,8 +49,9 @@ class NavBar extends Component {
 					<li><IndexLink to="/contact" activeClassName="active">contact</IndexLink></li>
 					<li className="socialDropDown" onClick={this.showSocialDropDown}><a href="#">social {this.renderDropDownGlyph()}</a></li>
 					<ul className="socialMedia" onMouseLeave={this.showSocialDropDown} style={this.state.showSocial  == false ? {display: 'none'} : {display: 'flex'}}>
-						<li><a className="socialBrands" href="#">facebook</a></li>
-						<li><a className="socialBrands" href="#">twitter</a></li>
+						<li><a className="socialBrands" href="https://www.youtube.com/channel/UCvaMlquFLO6rmDiu4c7uUmA" target="_blank">youtube</a></li>
+						<li><a className="socialBrands" href="https://www.facebook.com/Aguilar-Web-Development-1690308347937446/" target="_blank">facebook</a></li>
+						<li><a className="socialBrands" href="https://www.twitter.com/AguilarWebDev" target="_blank">twitter</a></li>
 					</ul>
 				</ul>	
 			</nav>

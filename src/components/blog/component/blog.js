@@ -10,8 +10,8 @@ class Blog extends Component {
 		return (
 			<div>
 				<div className="blogContainer container-fluid">
-					<h1>Blog</h1>
-				</div>
+					<h1>coming soon...</h1>
+			</div>
 			</div>
 		)	
 	}

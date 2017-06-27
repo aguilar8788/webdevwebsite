@@ -21,18 +21,13 @@
 	}
 
 	.rightContentContainer {
+		margin-top: 10%;
 		flex-grow: 1;	
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
-
-		h1 {
 		}
-	}
 
 	.contactForm {
-		margin-left: -50px;	
-		margin-top: -375px;
 		align-self: center;
 	}
 }

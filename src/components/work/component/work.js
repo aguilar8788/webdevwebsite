@@ -10,7 +10,13 @@ class Work extends Component {
 		return (
 			<div>
 				<div className="workContainer container-fluid">
-					<h1>Work</h1>
+					<h1>what we do</h1>
+					<div className="work">
+						<div className="workContent">
+							<div className="content">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		)	
@@ -22,7 +28,7 @@ Work.propTypes = {
 }
 
 Work.contextTypes = {
-	routes: PropTypes.object
+	router: PropTypes.object
 }
 
 export default Work
