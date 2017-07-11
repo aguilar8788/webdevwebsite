@@ -11,35 +11,38 @@ class Blog extends Component {
         axios.get('http://localhost:8080/blog')
             .then(res => {
                 if (res) {
-                    console.log("res", res)
                     this.setState({"blogData" : res.data})
                 }
             })
     }
 
     renderBlogEntry(blogDataArray) {
+        console.log("data", blogDataArray[0].imageName)
+        renderImages(blogDataArray[1].imageName)
         return blogDataArray.map(data => {
-            console.log("data", data.imageName)
-           return (
-               <div className="blogEntry">
-                   <img className="image" src={`http://localhost:8080/files/${data.imageName[0]}`} />
-                  <h2>{data.title}</h2>
-                   <p>{data.description}</p>
-               </div>
-           )
+            return (
+                <div className="blogEntry">
+                    <img className="image" src={`http://localhost:8080/files/${data.imageName[0]}`} />
+                    <h2>{data.title}</h2>
+                    <p>{data.description}</p>
+                </div>
+            )
         })
     }
 
     render() {
-        console.log("state", this.state)
         return (
-			<div>
-				<div className="blogContainer container-fluid">
+            <div>
+                <div className="blogContainer container-fluid">
                     {this.state ? this.renderBlogEntry(this.state.blogData) : ""}
-				</div>
-			</div>
+                </div>
+            </div>
         )
     }
+}
+
+function renderImages(imageArray) {
+    console.log(imageArray)
 }
 
 Blog.proptypes = {
