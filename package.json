@@ -22,14 +22,17 @@
     "google-maps": "^3.2.1",
     "jquery": "2.2.3",
     "react": "15.3.0",
-		"react-bootstrap": "^0.31.0",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "15.3.2",
+    "react-image-slideshow": "^1.5.2",
+    "react-portal": "^3.1.0",
     "react-redux": "4.4.5",
     "react-router": "2.5.2",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
-    "toastr": "2.1.2"
+    "toastr": "2.1.2",
+    "tween.js": "^16.6.0"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",

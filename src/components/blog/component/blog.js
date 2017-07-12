@@ -1,10 +1,14 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import SlideShow from 'react-image-slideshow';
 
 class Blog extends Component {
     constructor(props, context) {
         super(props, context)
+
+        this.renderImages = this.renderImages.bind(this)
+
     }
 
     componentWillMount() {
@@ -17,12 +21,12 @@ class Blog extends Component {
     }
 
     renderBlogEntry(blogDataArray) {
-        console.log("data", blogDataArray[0].imageName)
-        renderImages(blogDataArray[1].imageName)
-        return blogDataArray.map(data => {
+        return blogDataArray.map((data, index) => {
             return (
-                <div className="blogEntry">
-                    <img className="image" src={`http://localhost:8080/files/${data.imageName[0]}`} />
+                <div key={index} className="blogEntry">
+                    <div className="imagesContainer">
+                        {this.renderImages(data.imageName)}
+                    </div>
                     <h2>{data.title}</h2>
                     <p>{data.description}</p>
                 </div>
@@ -30,7 +34,24 @@ class Blog extends Component {
         })
     }
 
+    handleSlideshowOpen(index)
+    {
+        this.refs.SlideShow.handleModalOpen(index);
+    }
+
+    renderImages(imageArray) {
+        return imageArray.map( (image, index) => {
+            return(
+                <div key={index} >
+                    <img className="image" src={`http://localhost:8080/files/${image}`} />
+                </div>
+            )
+        })
+    }
+
     render() {
+
+
         return (
             <div>
                 <div className="blogContainer container-fluid">
@@ -41,9 +62,6 @@ class Blog extends Component {
     }
 }
 
-function renderImages(imageArray) {
-    console.log(imageArray)
-}
 
 Blog.proptypes = {
 
