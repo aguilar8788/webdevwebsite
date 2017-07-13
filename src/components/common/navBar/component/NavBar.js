@@ -41,7 +41,7 @@ class NavBar extends Component {
 	render () {
 		return (
 			<nav className="navigation">
-				<img className="logo" src={require("../../../../images/AguilarWebDevLogo.png")} />
+				<IndexLink to="/"><img className="logo" src={require("../../../../images/AguilarWebDevLogo.png")} /></IndexLink>
 				<ul>	
 					<li><IndexLink to="/" activeClassName="active">about</IndexLink></li>
 					<li><IndexLink to="/work" activeClassName="active">work</IndexLink></li>

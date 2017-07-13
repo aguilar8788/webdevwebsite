@@ -12,7 +12,6 @@ class admin extends Component {
 
 	submitForm(event) {
 		event.preventDefault()	
-		console.log(event)
 	}
 
 	render() {

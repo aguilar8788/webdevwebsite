@@ -30,7 +30,6 @@ class BlogForm extends Component {
     }
 
     render() {
-        console.log("state", this.state)
         return(
             <div className="blogForm">
                 <form>

@@ -17,7 +17,10 @@ class Blog extends Component {
                 if (res) {
                     this.setState({"blogData" : res.data})
                 }
-            })
+            }).catch(errors => {
+                console.error("error", errors)
+        })
+
     }
 
     renderBlogEntry(blogDataArray) {

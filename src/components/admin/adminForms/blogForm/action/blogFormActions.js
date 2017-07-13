@@ -2,7 +2,6 @@ import axios from 'axios'
 
 export function submitForm(formData) {
     return function(dispatch, getState) {
-        console.log("formdata", formData)
         // let postObject = {
         //     "firstName": formData.firstName,
         //     "lastName": formData.lastName,

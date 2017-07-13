@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import ContactForm from '../../common/form/component/Form.js'
+import {connect} from 'react-redux'
 class Contact extends Component {
 	constructor(props, context) {
 		super(props, context)	
@@ -25,14 +26,19 @@ class Contact extends Component {
 							<h1>aguilarwebdevelopment@gmail.com</h1>
 						</div>
 					</div>
-					<div className="rightContentContainer">
-						<div className="formHead">
-							<h1>don't call us,</h1>
-							<br />
-							<h1>we will call you</h1>
+					{this.props.formResponse.error  ? <div className="rightContentContainer"><h1>{`failed: ${this.props.formResponse.error.failure.message} :(`}</h1></div> :
+
+					this.props.formResponse == "success" ?
+						<div className="rightContentContainer"><h1>Thank you! We will contact you within the next 2 business days.</h1></div> :
+						<div className="rightContentContainer">
+							<div className="formHead">
+								<h1>don't call us,</h1>
+								<br />
+								<h1>we will call you</h1>
+							</div>
+							<ContactForm className="contactForm"/>
 						</div>
-						<ContactForm className="contactForm" />
-					</div>
+                    }
 				</div>
 			</div> 
 		)
@@ -47,4 +53,17 @@ Contact.contextTypes = {
 	router: PropTypes.object
 }
 
-export default Contact
+function mapStateToProps(state, ownProps) {
+    let form = [{
+        firstName: '',
+        lastName: '',
+        phone: '',
+        company: ''
+    }]
+    return {
+        form: form,
+        formResponse: state.formReducer
+    }
+}
+
+export default connect(mapStateToProps)(Contact)

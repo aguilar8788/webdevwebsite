@@ -29,6 +29,8 @@ class ContactForm extends Component {
 		this.props.actions.submitForm(this.state.form)
 	}
 
+
+
 	render() {
 		return(
 			<div className="contactForm">
@@ -83,9 +85,9 @@ function mapStateToProps(state, ownProps) {
 		phone: '',
 		company: ''
 	}]
-
 	return {
-		form: form	
+		form: form,
+		formResponse: state.formReducer
 	}
 }
 
