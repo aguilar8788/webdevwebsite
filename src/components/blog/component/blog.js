@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import SlideShow from 'react-image-slideshow';
+import {serverRequest} from "../../../browserUtils/utils";
+import {connect} from "react-redux";
 
 class Blog extends Component {
     constructor(props, context) {
@@ -12,7 +14,7 @@ class Blog extends Component {
     }
 
     componentWillMount() {
-        axios.get('http://localhost:8080/blog')
+        axios.get(`${this.props.Url}/blog`)
             .then(res => {
                 if (res) {
                     this.setState({"blogData" : res.data})
@@ -46,7 +48,7 @@ class Blog extends Component {
         return imageArray.map( (image, index) => {
             return(
                 <div key={index} >
-                    <img className="image" src={`http://localhost:8080/files/${image}`} />
+                    <img className="image" src={`${this.props.Url}/files/${image}`} />
                 </div>
             )
         })
@@ -54,7 +56,8 @@ class Blog extends Component {
 
     render() {
 
-
+console.log("blogprops", this.props)
+        console.log("state", this.state)
         return (
             <div>
                 <div className="blogContainer container-fluid">
@@ -67,11 +70,19 @@ class Blog extends Component {
 
 
 Blog.proptypes = {
-
+    Url: PropTypes.string
 }
 
 Blog.contextTypes = {
     router: PropTypes.object
 }
 
-export default Blog
+function mapStateToProps(state, ownProps) {
+    let Url = serverRequest()
+
+    return {
+        Url
+    }
+}
+
+export default connect(mapStateToProps)(Blog)

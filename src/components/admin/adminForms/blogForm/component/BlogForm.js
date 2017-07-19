@@ -13,6 +13,7 @@ class BlogForm extends Component {
         }
         this.updateFormState = this.updateFormState.bind(this)
         this.submitForm = this.submitForm.bind(this)
+        this.handleFile = this.handleFile.bind(this)
     }
 
     updateFormState(event) {
@@ -26,42 +27,78 @@ class BlogForm extends Component {
 
     submitForm(event) {
         event.preventDefault()
-        this.props.actions.submitForm(this.state.form)
+        this.props.actions.submitForm({data: {
+            uri: this.state.uri,
+            name: this.state.name,
+            type: this.state.type
+        }})
+    }
+
+    handleFile(e) {
+
+        console.log("event", e.target)
+        const reader = new FileReader();
+        const file = e.target.files[0];
+
+        reader.onload = (upload) => {
+            this.setState({
+                uri: upload.target.result,
+                name: file.name,
+                type: "multipart/formdata"
+            });
+        };
+
+        reader.readAsDataURL(file);
     }
 
     render() {
         return(
             <div className="blogForm">
-                <form>
-                    <TextInput
-                        name="Title"
-                        placeholder="Title"
-                        onChange={this.updateFormState}
-                        inputStatus={this.state.form.firstName ? this.state.form.firstName : "false"}
-                    />
-                    <TextInput
-                        name="Description"
-                        placeholder="Description"
-                        onChange={this.updateFormState}
-                        inputStatus={this.state.form.lastName ? this.state.form.lastName : "false"}
+                {/*<form>*/}
+                    {/*<TextInput*/}
+                        {/*name="Title"*/}
+                        {/*placeholder="Title"*/}
+                        {/*onChange={this.updateFormState}*/}
+                        {/*inputStatus={this.state.form.firstName ? this.state.form.firstName : "false"}*/}
+                    {/*/>*/}
+                    {/*<TextInput*/}
+                        {/*name="Description"*/}
+                        {/*placeholder="Description"*/}
+                        {/*onChange={this.updateFormState}*/}
+                        {/*inputStatus={this.state.form.lastName ? this.state.form.lastName : "false"}*/}
 
-                    />
-                    <TextInput
-                        name="Tags"
-                        placeholder="Tags"
-                        onChange={this.updateFormState}
-                        inputStatus={this.state.form.phoneNumber ? this.state.form.phoneNumber : "false"}
+                    {/*/>*/}
+                    {/*<TextInput*/}
+                        {/*name="Tags"*/}
+                        {/*placeholder="Tags"*/}
+                        {/*onChange={this.updateFormState}*/}
+                        {/*inputStatus={this.state.form.phoneNumber ? this.state.form.phoneNumber : "false"}*/}
 
-                    />
-                    <TextInput
-                        name="Images"
-                        placeholder="Images"
-                        onChange={this.updateFormState}
-                        inputStatus={this.state.form.company ? this.state.form.company : "false"}
+                    {/*/>*/}
+                    {/*<TextInput*/}
+                        {/*name="Images"*/}
+                        {/*placeholder="Images"*/}
+                        {/*onChange={this.updateFormState}*/}
+                        {/*inputStatus={this.state.form.company ? this.state.form.company : "false"}*/}
 
-                    />
-                    <input type="file" />
-                    <button type="submit" onClick={this.submitForm}>send</button>
+                    {/*/>*/}
+                    {/*<input type="file" />*/}
+                    {/*<button type="submit" onClick={this.submitForm}>send</button>*/}
+                {/*</form>*/}
+                <form onSubmit={this.submitForm} method="POST" encType="multipart/form-data" action="http://localhost:8080/files">
+                    <table>
+                        <tr><td>file to upload:</td><td><input onChange={this.handleFile} type="file" name="file" multiple="multiple"/></td></tr>
+                        <tr><td>title:</td><td><input type="text" id="imageTitle" name="imageTitle" /></td></tr>
+                        <tr><td>url:</td><td><input type="text" id="siteUrl" name="siteUrl" /></td></tr>
+                        <tr><td>type:</td>
+                            <td>
+                                <select name="type">
+                                    <option value="portfolio">Portfolio</option>
+                                    <option value="blog">Blog</option>
+                                </select>
+                            </td></tr>
+                        <tr><td><input type="submit" value="Upload" /></td></tr>
+                    </table>
                 </form>
             </div>
         )
