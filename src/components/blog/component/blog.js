@@ -55,9 +55,6 @@ class Blog extends Component {
     }
 
     render() {
-
-console.log("blogprops", this.props)
-        console.log("state", this.state)
         return (
             <div>
                 <div className="blogContainer container-fluid">

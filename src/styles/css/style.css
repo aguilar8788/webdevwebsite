@@ -157,15 +157,15 @@
     margin-bottom: 10px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.24); }
   .workContainer .work {
+    overflow: scroll;
+    width: 95vw;
+    height: 100%; }
+  .workContainer .workContent {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100%;
-    overflow: scroll; }
-  .workContainer .workContent {
     width: auto;
     padding: 20px; }
     .workContainer .workContent .content {
@@ -178,6 +178,8 @@
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
     .workContainer .workContent .image:hover {
       box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+  .workContainer .work::-webkit-scrollbar {
+    display: none; }
 
 .blogContainer {
   height: 92.8vh;
@@ -216,6 +218,9 @@
         background-size: cover;
         padding: 5px; }
     .blogContainer .blogEntry h2 {
-      align-self: flex-start; }
+      align-self: flex-start;
+      font-size: 35px; }
+    .blogContainer .blogEntry p {
+      font-size: 15px; }
 
 /*# sourceMappingURL=style.css.map */

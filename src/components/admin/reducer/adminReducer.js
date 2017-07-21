@@ -1,6 +1,7 @@
 import {
-    UPDATE_CONTACT_LIST,
-    LOAD_CONTACTS
+    LOAD_BLOG_DATA,
+    LOAD_CONTACTS,
+    UPDATE_CONTACT_LIST
 } from '../../../actions/actionTypes'
 
 export default function adminReducer(state = [], action) {

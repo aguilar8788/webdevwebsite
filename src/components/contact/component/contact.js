@@ -46,6 +46,7 @@ class Contact extends Component {
 }
 
 Contact.propTypes = {
+	formResponse: PropTypes.array
 
 }
 

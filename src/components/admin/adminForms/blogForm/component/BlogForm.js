@@ -35,8 +35,6 @@ class BlogForm extends Component {
     }
 
     handleFile(e) {
-
-        console.log("event", e.target)
         const reader = new FileReader();
         const file = e.target.files[0];
 
