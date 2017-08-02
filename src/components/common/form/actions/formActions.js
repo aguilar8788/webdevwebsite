@@ -3,7 +3,7 @@ import {
     FORM_SUBMISSION_FAILED,
     FORM_SUBMISSION_SUCCESS
 } from '../../../../actions/actionTypes'
-import {serverRequest} from "../../../../browserUtils/utils";
+import {formatPhoneNumber, serverRequest} from "../../../../browserUtils/utils";
 
 export function formSubmissionSuccessful(success) {
     return {type: FORM_SUBMISSION_SUCCESS, success}
@@ -14,13 +14,13 @@ export function formSubmissionFailed(failure) {
 }
 
 export function submitForm(formData) {
-    let postUrl = serverRequest()
 
+    let postUrl = serverRequest()
     return function(dispatch, getState) {
         let postObject = {
             "firstName": formData.firstName,
             "lastName": formData.lastName,
-            "phoneNumber": formData.phoneNumber,
+            "phoneNumber": formatPhoneNumber(formData.phoneNumber),
             "company": formData.company ? formData.company : ""
         }
         return axios.post(`${postUrl}/contact` , postObject).then((res) => {

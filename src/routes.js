@@ -12,6 +12,6 @@ export default (
 		<Route path="/blog" component={Blog} />
 		<Route path="/contact" component={Contact} />
 		<Route path="/work" component={Work} />
-		<Route path="/admin" component={Admin} />
+		{/*<Route path="/admin" component={Admin} />*/}
 	</Route>
 )

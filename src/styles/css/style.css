@@ -63,6 +63,9 @@
         padding: 2px;
         background-color: rgba(0, 0, 0, 0.8);
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navigation .socialMedia {
+      margin-left: -150px; } }
 
 .navigation ul li a {
   font-size: 20px; }
@@ -144,6 +147,13 @@
   .contactContainer .contactForm {
     align-self: center; }
 
+@media only screen and (min-device-width: 200px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contactContainer {
+    flex-direction: column; }
+    .contactContainer .rightContentContainer {
+      margin-top: -20%;
+      justify-content: center;
+      align-items: center; } }
 .workContainer {
   height: 80vh; }
   .workContainer h1 {
