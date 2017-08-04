@@ -12,7 +12,7 @@ export function serverRequest() {
 }
 
 export function formatPhoneNumber(phoneNumberString) {
-    var replaceString = (""+phoneNumberString).replace(/\D/g, '');
-    var matchString = replaceString.match(/^(\d{3})(\d{3})(\d{4})$/);
+    let replaceString = (""+phoneNumberString).replace(/\D/g, '');
+    let matchString = replaceString.match(/^(\d{3})(\d{3})(\d{4})$/);
     return (!matchString) ? null : "(" + matchString[1] + ") " + matchString[2] + "-" + matchString[3];
 }
