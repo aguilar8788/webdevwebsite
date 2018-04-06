@@ -43,7 +43,7 @@ class NavBar extends Component {
 			<nav className="navigation">
 				<IndexLink to="/"><img className="logo" src={require("../../../../images/AguilarWebDevLogo.png")} /></IndexLink>
 				<ul>	
-					<li><IndexLink to="/" activeClassName="active">about</IndexLink></li>
+					<li><IndexLink to="/about" activeClassName="active">about</IndexLink></li>
 					<li><IndexLink to="/work" activeClassName="active">work</IndexLink></li>
 					<li><IndexLink to="/blog" activeClassName="active">blog</IndexLink></li>
 					<li><IndexLink to="/contact" activeClassName="active">contact</IndexLink></li>

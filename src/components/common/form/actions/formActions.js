@@ -14,14 +14,15 @@ export function formSubmissionFailed(failure) {
 }
 
 export function submitForm(formData) {
-
+    console.log("formData", formData)
     let postUrl = serverRequest()
     return function(dispatch, getState) {
         let postObject = {
-            "firstName": formData.firstName,
-            "lastName": formData.lastName,
+            "name": formData.name,
             "phoneNumber": formatPhoneNumber(formData.phoneNumber),
-            "company": formData.company ? formData.company : ""
+            "email" : formData.email,
+            "company": formData.company ? formData.company : "",
+            "description": formData.description ? formData.description : ""
         }
         return axios.post(`${postUrl}/contact` , postObject).then((res) => {
             if (res.status == 200) {

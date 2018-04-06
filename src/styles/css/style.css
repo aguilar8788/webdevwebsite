@@ -91,6 +91,7 @@
   font-size: 45px;
   padding: 3px; }
 .contactForm input, .contactForm select, .contactForm textarea {
+  border: none;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.8);
   height: 50px;
@@ -109,10 +110,24 @@
   color: #599dd4; }
 .contactForm input:focus::-webkit-input-placeholder {
   opacity: 0; }
+.contactForm textarea {
+  height: 15vh; }
+.contactForm textarea::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #599dd4;
+  font-size: 18px;
+  text-align: left; }
+.contactForm textarea:focus {
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 18px;
+  color: #599dd4; }
+.contactForm textarea:focus::-webkit-input-placeholder {
+  opacity: 0; }
 .contactForm .visited {
   text-align: left;
   background-color: rgba(0, 0, 0, 0.8);
-  font-size: 30px;
+  font-size: 18px;
   color: #599dd4; }
 .contactForm form {
   display: flex;

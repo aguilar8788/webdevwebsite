@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import aboutReducer from '../components/about/reducers/aboutReducer'
+import aboutReducer from '../components/home/reducers/aboutReducer'
 import formReducer from '../components/common/form/reducer/formReducer'
 import adminReducer from '../components/admin/reducer/adminReducer'
 import blogReducer from '../components/admin/reducer/blogInfoReducer'

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import TextInput from '../../TextInput.js'
+import TextArea from '../../TextArea.js'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as formActions from '../actions/formActions.js'
@@ -32,35 +33,39 @@ class ContactForm extends Component {
 
 
 	render() {
+		console.log(this.state)
+		console.log(this.props)
 		return(
 			<div className="contactForm">
 				<form>
 					<TextInput 
-						name="firstName"
-						placeholder="first name"
+						name="name"
+						placeholder="name"
 						onChange={this.updateFormState}
 						inputStatus={this.state.form.firstName ? this.state.form.firstName : "false"} 
-					/>
-					<TextInput
-						name="lastName"
-						placeholder="last name"
-						onChange={this.updateFormState}
-						inputStatus={this.state.form.lastName ? this.state.form.lastName : "false"} 
-
 					/>
 					<TextInput
 						name="phoneNumber"
 						placeholder="phone"
 						onChange={this.updateFormState}
 						inputStatus={this.state.form.phoneNumber ? this.state.form.phoneNumber : "false"} 
-
+					/>
+					<TextInput
+						name="email"
+						placeholder="email"
+						onChange={this.updateFormState}
+						inputStatus={this.state.form.email ? this.state.form.email: "false"}
 					/>
 					<TextInput
 						name="company"
 						placeholder="company"
 						onChange={this.updateFormState}
 						inputStatus={this.state.form.company ? this.state.form.company : "false"} 
-
+					/>
+					<TextArea
+						name="description"
+						placeholder="Include a message (optional)"
+						onChange={this.updateFormState}
 					/>
 					<button type="submit" onClick={this.submitForm}>send</button>
 				</form>
@@ -80,10 +85,11 @@ ContactForm.contextTypes = {
 
 function mapStateToProps(state, ownProps) {
 	let form = [{
-		firstName: '',
-		lastName: '',
+		name: '',
 		phone: '',
-		company: ''
+		email: '',
+		company: '',
+		description: ''
 	}]
 	return {
 		form: form,
