@@ -5,13 +5,6 @@
   align-items: center;
   width: 100vw;
   height: 90vh; }
-  .aboutContainer h1 {
-    padding: 5px;
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 40px;
-    color: #599dd4;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0px 1px 6px rgba(0, 0, 0, 0.24); }
 
 .navigation {
   display: flex;
@@ -148,11 +141,18 @@
     display: inline-block;
     padding: 2px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0px 1px 6px rgba(0, 0, 0, 0.24); }
+  .contactContainer p {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #599dd4;
+    font-size: 20px;
+    display: inline-block;
+    padding: 2px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0px 1px 6px rgba(0, 0, 0, 0.24); }
   .contactContainer .leftContentContainer {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     margin-left: 70px; }
   .contactContainer .rightContentContainer {
     margin-top: 10%;
@@ -207,9 +207,12 @@
     display: none; }
 
 .blogContainer {
-  height: 92.8vh;
-  width: 95vw;
-  overflow: scroll; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; }
   .blogContainer h1 {
     padding: 5px;
     width: auto;
@@ -219,33 +222,5 @@
     display: inline-block;
     margin-top: 20px;
     margin-bottom: 10px; }
-  .blogContainer .blogEntry {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.7); }
-    .blogContainer .blogEntry .imagesContainer {
-      width: 60vw;
-      display: flex;
-      flex-direction: row;
-      overflow: scroll; }
-      .blogContainer .blogEntry .imagesContainer .image {
-        position: relative;
-        float: left;
-        width: 300px;
-        height: 300px;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 5px; }
-    .blogContainer .blogEntry h2 {
-      align-self: flex-start;
-      font-size: 35px; }
-    .blogContainer .blogEntry p {
-      font-size: 15px; }
 
 /*# sourceMappingURL=style.css.map */

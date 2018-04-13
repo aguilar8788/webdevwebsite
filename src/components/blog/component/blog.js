@@ -29,11 +29,6 @@ class Blog extends Component {
         return blogDataArray.map((data, index) => {
             return (
                 <div key={index} className="blogEntry">
-                    <div className="imagesContainer">
-                        {this.renderImages(data.imageName)}
-                    </div>
-                    <h2>{data.title}</h2>
-                    <p>{data.description}</p>
                 </div>
             )
         })
@@ -58,7 +53,7 @@ class Blog extends Component {
         return (
             <div>
                 <div className="blogContainer container-fluid">
-                    {this.state ? this.renderBlogEntry(this.state.blogData) : ""}
+                    <h1>Coming Soon!</h1>
                 </div>
             </div>
         )

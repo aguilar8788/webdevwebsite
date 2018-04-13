@@ -12,7 +12,8 @@ class Contact extends Component {
 			<div>
 				<div className="contactContainer container-fluid">
 					<div className="leftContentContainer">	
-
+						<h1>We would love to work with you</h1>
+						<p>If you are interested in collaborating, or if you just have a question drop us a line.</p>
 					</div>
 					{this.props.formResponse.error  ? <div className="rightContentContainer"><h1>{`failed: ${this.props.formResponse.error.failure.message} :(`}</h1></div> :
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { Link, IndexLink } from 'react-router'
+import {IndexLink} from 'react-router'
 import {connect} from 'react-redux'
 import Glyphicon from 'react-bootstrap/lib/Glyphicon'
 
@@ -45,7 +45,7 @@ class NavBar extends Component {
 				<ul>	
 					<li><IndexLink to="/about" activeClassName="active">about</IndexLink></li>
 					<li><IndexLink to="/work" activeClassName="active">work</IndexLink></li>
-					<li><IndexLink to="/blog" activeClassName="active">blog</IndexLink></li>
+					<li><IndexLink to="/blog" activeClassName="active">vlog</IndexLink></li>
 					<li><IndexLink to="/contact" activeClassName="active">contact</IndexLink></li>
 					<li className="socialDropDown" onClick={this.showSocialDropDown}><a href="#">social {this.renderDropDownGlyph()}</a></li>
 					<ul className="socialMedia" onMouseLeave={this.showSocialDropDown} style={this.state.showSocial  == false ? {display: 'none'} : {display: 'flex'}}>
